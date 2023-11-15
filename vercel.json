@@ -1,7 +1,6 @@
 {
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.ejs" },
+    { "src": "/", "dest": "/index.ejs" },
     { "src": "/generate", "methods": ["POST"], "dest": "/generate" }
   ]
 }
