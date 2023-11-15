@@ -5,7 +5,7 @@ const QRCode = require('qrcode');
 const app = express();
 const port = 3000;
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 
 // Middleware untuk parse body dari form
 app.use(express.urlencoded({ extended: false }));
