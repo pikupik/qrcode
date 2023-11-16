@@ -3,6 +3,8 @@ const ejs = require('ejs');
 const QRCode = require('qrcode');
 
 const app = express();
+
+const hostname = "0.0.0.0";
 const port = 3000;
 
 app.set('view engine', 'ejs')
@@ -38,6 +40,6 @@ app.use((err, req, res, next) => {
 
 
 // Jalankan server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, hostname, () => {
+  console.log(`Server is running on ${hostname}:${port}`);
 });
