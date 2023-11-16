@@ -11,6 +11,8 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
+
+
 // Route untuk menampilkan halaman utama
 app.get('/', (req, res) => {
   const qrCode = null;
@@ -28,6 +30,12 @@ app.post('/generate', async (req, res) => {
     res.status(500).send('Error generating QR code');
   }
 });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
 
 // Jalankan server
 app.listen(port, () => {
